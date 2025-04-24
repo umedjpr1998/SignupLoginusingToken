@@ -96,14 +96,14 @@ function Signup() {
     const handlesubmit = async () => {
         if (!validateForm()) return;
 
-        const formData = new FormData();
+        const myformdata = new FormData();
         Object.entries(formdata).forEach(([key, value]) => {
-            formData.append(key, value);
+            myformdata.append(key, value);
         });
 
-        console.log("formData is", formData)
+        console.log("formData is", myformdata)
         try {
-            const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, myformdata);
             console.log("Response:", response.data);
             alert("Registration successful! Redirecting to login...");
             console.log("User data from server:", response.data.user);
