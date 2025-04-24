@@ -99,11 +99,17 @@ function Signup() {
         if (!validateForm()) return;
 
         const myformdata = new FormData();
+
         Object.entries(formdata).forEach(([key, value]) => {
             myformdata.append(key, value);
         });
 
-        console.log("formData is", myformdata)
+        for (let pair of myformdata.entries()) {
+            console.log(`${pair[0]}:`, pair[1]);
+        }
+
+        // console.log("formData is", myformdata)
+
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, myformdata);
             console.log("Response:", response.data);
