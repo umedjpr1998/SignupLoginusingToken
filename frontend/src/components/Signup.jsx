@@ -102,7 +102,7 @@ function Signup() {
         });
 
         try {
-            const response = await axios.post("http://localhost:5000/register", formData);
+            const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, formData);
             console.log("Response:", response.data);
             alert("Registration successful! Redirecting to login...");
             console.log("User data from server:", response.data.user);
