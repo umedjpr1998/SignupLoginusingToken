@@ -101,6 +101,7 @@ function Signup() {
             formData.append(key, value);
         });
 
+        console.log("formData is", formData)
         try {
             const response = await axios.post(`${process.env.REACT_APP_API_URL}/register`, formData);
             console.log("Response:", response.data);
