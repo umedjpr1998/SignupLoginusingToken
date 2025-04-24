@@ -93,9 +93,9 @@ function Signup() {
 
 
 
-    const handlesubmit = async () => {
+    const handlesubmit = async (e) => {
         e.preventDefault();
-        
+
         if (!validateForm()) return;
 
         const myformdata = new FormData();
